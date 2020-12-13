@@ -4,7 +4,8 @@ namespace App\Http\Controllers\seller;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Toko;
+use App\toko;
+use App\User;
 
 class kelola_tokoController extends Controller
 {
@@ -19,8 +20,9 @@ class kelola_tokoController extends Controller
 
     public function index()
     {
-
-    return view('seller.kelola_toko')->with('Toko', Toko::all());
+      $toko = toko::all();
+      //dd($toko);
+      return view ('seller.kelola_toko.index')->with('toko',$toko);
 
     }
 

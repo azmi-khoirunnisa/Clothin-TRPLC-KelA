@@ -14,10 +14,14 @@ class CreateTokosTable extends Migration
     public function up()
     {
         Schema::create('tokos', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('nama_toko');
-            $table->string('deskripsi_toko');
-            $table->timestamps();
+          $table->bigIncrements('id');
+          $table->string('nama_toko');
+          $table->string('deskripsi_toko');
+          $table->Integer('user_id')->unsigned();
+          $table->foreign('user_id')->references('id')->on('users');
+          $table->timestamps();
+
+
         });
     }
 

@@ -22,8 +22,7 @@ Route::resource('users','UserController');
   return "You are an admin";
 })->middleware(['auth','auth.admin']);
 */
-
-Auth::routes();
+;;Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
@@ -40,26 +39,43 @@ Route::group(['middleware'=>['auth']], function(){
       return view('seller.dashboard');
     })->name('seller.dashboard');
 
-    Route::get('/kelola_toko', function(){
-      return view('seller.kelola_toko.index');
-    })->name('seller.kelola_toko');
+  //  Route::get('/kelola_toko', function(){
+    //  return view('seller.kelola_toko.index');
+    //})->name('seller.kelola_toko');
 
-    Route::get('/deskripsi_toko', function(){
+  /*  Route::get('/deskripsi_toko', function(){
       return view('seller.deskripsi_toko');
-    })->name('seller.deskripsi_toko');
+    })->name('seller.deskripsi_toko');*/
 
-    Route::get('/katalog_toko', function(){
+  /*  Route::get('/katalog_toko', function(){
       return view('seller.katalog');
-    })->name('seller.katalog');
+    })->name('seller.katalog');*/
 
-    Route::get('/katalog_toko/create',function(){
+  /*  Route::post('/katalog_toko/create',function(){
       return view('seller.create-katalog');
-    });
+    })->name('seller.katalog.create');*/
+    Route::get('/katalog_toko/create','seller\katalogController@create')->name('seller.katalog.create');
+    Route::post('/katalog_toko', 'seller\katalogController@store')->name('seller.katalog.store');
+    Route::get('/kelola_toko','seller\kelola_tokoController@index')->name('seller.kelola_toko');
+    Route::get('/deskripsi_toko/create','seller\deskripsi_tokoController@create')->name('seller.deskripsi_toko.create');
+    Route::get('/deskripsi_toko/edit/{id}','seller\deskripsi_tokoController@edit')->name('seller.deskripsi_toko.edit');
+    Route::post('/deskripsi_toko','seller\deskripsi_tokoController@store')->name('seller.deskripsi_toko.store');
+    Route::post('/deskripsi_toko/{deskripsi_toko}','seller\deskripsi_tokoController@update')->name('seller.deskripsi_toko.update');
+
+
+    Route::get('/katalog_toko/{id}','seller\deskripsi_tokoController@show')->name('seller.deskripsi_toko.show');
+    Route::get('/katalog_toko','seller\katalogController@index')->name('seller.katalog');
+    Route::get('/katalog_toko/edit/{id}','seller\katalogController@edit')->name('seller.katalog.edit');
+    Route::post('/katalog_toko/update/{id}','seller\katalogController@update')->name('seller.katalog.update');
+    Route::get('/katalog_toko/{id}','seller\katalogController@destroy')->name('seller.katalog.destroy');
   });
 });
 
-Route::resource('/deskripsi_toko','seller\deskripsi_tokoController');
-Route::resource('/katalog_toko','seller\katalogController');
+//Route::resource('/katalog_toko','seller\katalogController');
+//Route::get('/kelola_toko', 'seller\kelola_tokoController@index')->name('seller.kelola_toko.index');
+
+//Route::resource('/deskripsi_toko','seller\deskripsi_tokoController');
+
 
 
 Route::group(['middleware'=>['auth']], function(){

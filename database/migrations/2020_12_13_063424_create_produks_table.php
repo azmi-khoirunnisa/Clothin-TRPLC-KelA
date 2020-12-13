@@ -18,7 +18,11 @@ class CreateProduksTable extends Migration
             $table->string ('nama_produk');
             $table->Integer ('harga_produk');
             $table->string('bahan');
-            $table->string('Foto');
+            $table->string('image');
+            $table->Integer('user_id')->unsigned();
+            $table->unsignedBigInteger('toko_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('toko_id')->references('id')->on('tokos')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -5,8 +5,6 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use App\toko;
-use App\produk;
 
 class User extends Authenticatable
 {
@@ -18,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nama', 'tempat_lahir', 'tanggal_lahir', 'jenis_kelamin', 'noHp', 'email', 'password',
+        'nama_lengkap', 'email', 'alamat', 'noHp', 'username', 'password',
     ];
 
     /**
@@ -39,11 +37,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    /*public function setTanggalLahirAttribute($value)
-    {
-      $this->attributes['tanggal_lahir'] = Carbon::createFormFormat('m/d/Y', $value)->format('Y-m-d');
-    }*/
-
     public function roles(){
       return $this->belongsToMany('App\Role');
     }
@@ -54,11 +47,9 @@ class User extends Authenticatable
       return null !== $this->roles()->where('name', $role)->first();
     }
 
-    public function toko(){
-      return $this->hasOne('App\Toko');
-    }
-    public function produk()
+    public function datapanen()
     {
-      return $this->hasMany('App\produk');
+      return $this->hasMany('App\datapanen');
     }
+
 }
