@@ -21,5 +21,11 @@ class toko extends Model
   {
     return $this->hasMany('App\produk');
   }
+  public function getNamaFieldAttribute($value)
+  {
+    $produk_id = substr($this->id, 0, 2);
+    $produk = produk::find($produk_id);
+    return $produk;
+  }
 
 }

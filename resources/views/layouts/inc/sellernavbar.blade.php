@@ -27,11 +27,10 @@
              <a class="nav-link" href="{{ route('seller.kelola_toko')}}" >Kelola Toko</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-               target="_blank">Menu 2</a>
+             <a class="nav-link" href="">Menu 2</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Menu 3</a>
+             <a class="nav-link" href="">Menu 3</a>
            </li>
          </ul>
 
@@ -69,6 +68,9 @@
                    </a>
 
                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                     <a class="dropdown-item" href="{{ route('user.profile', Auth::user()->id)}}">
+                         <i class="fa fa-shield"></i> My Account
+                     </a>
                        <a class="dropdown-item" href="{{ route('logout') }}"
                           onclick="event.preventDefault();
                                         document.getElementById('logout-form').submit();">

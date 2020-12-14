@@ -6,7 +6,7 @@
   @foreach ($toko as $data)
 <div align="left">
   <a href="{{ route('seller.deskripsi_toko.create')}}" class="btn btn-primary">Deskripsi Toko</a>
-  <a href="{{ route('seller.deskripsi_toko.show', $data->id)}}" class="btn btn-danger" align="right">Buat Katalog</a>
+  <a href="{{ route('seller.deskripsi_toko.show',$data->id)}}" class="btn btn-danger" align="right">Buat Katalog</a>
   <a href="{{ route('seller.katalog')}}" class="btn btn-warning">Katalog</a>
 </div>
 </div>

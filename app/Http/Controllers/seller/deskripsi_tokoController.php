@@ -66,7 +66,7 @@ class deskripsi_tokoController extends Controller
      */
     public function show($id)
     {
-      $data = toko::find($id);
+      $data = toko::findOrFail($id);
       //dd($data);
       return view('seller.create-katalog', compact('data'));
     }

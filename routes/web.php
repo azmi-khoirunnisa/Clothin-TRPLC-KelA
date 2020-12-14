@@ -15,7 +15,7 @@ Route::get('/', function () {
     return view('frontend.index');
 });
 
-Route::resource('users','UserController');
+Route::resource('/users','UserController');
 
 
 /*Route::get('/admin', function() {
@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function(){
   Route::get('/',function(){
     return view('admin.dashboard');
   })->name('admin.dashboard');
+  Route::get('/users','UserController@create')->name('user.create');
 });
 
 
@@ -63,11 +64,13 @@ Route::group(['middleware'=>['auth']], function(){
     Route::post('/deskripsi_toko/{deskripsi_toko}','seller\deskripsi_tokoController@update')->name('seller.deskripsi_toko.update');
 
 
-    Route::get('/katalog_toko/{id}','seller\deskripsi_tokoController@show')->name('seller.deskripsi_toko.show');
+    Route::get('/deskripsi_toko/{id}','seller\deskripsi_tokoController@show')->name('seller.deskripsi_toko.show');
     Route::get('/katalog_toko','seller\katalogController@index')->name('seller.katalog');
     Route::get('/katalog_toko/edit/{id}','seller\katalogController@edit')->name('seller.katalog.edit');
     Route::post('/katalog_toko/update/{id}','seller\katalogController@update')->name('seller.katalog.update');
     Route::get('/katalog_toko/{id}','seller\katalogController@destroy')->name('seller.katalog.destroy');
+
+
   });
 });
 
@@ -83,6 +86,8 @@ Route::group(['middleware'=>['auth']], function(){
     Route::get('/', function(){
       return view('customer.dashboard');
     })->name('customer.dashboard');
+    Route::get('/toko','customer\tokoController@index')->name('customer.toko.index');
+    Route::get('/toko/{id}','customer\tokoController@show')->name('customer.toko.show');
   });
 });
 

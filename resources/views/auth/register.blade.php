@@ -85,6 +85,24 @@
                         </div>
 
                         <div class="form-group row">
+                          <label for="jenis_kelamin" class="col-md-4 col-form-label text-md-right">{{ __('Jenis Kelamin')}}</label>
+
+                          <div class="col-md-6">
+                            <div>
+                                <input type="radio" name="jenis_kelamin" value="{{ (old('jenis_kelamin') == 'laki-laki') ? 'checked' : ''}}" class="radio"> Laki-laki
+                            </div>
+                            <div>
+                                <input type="radio" name="jenis_kelamin" value="{{ (old('jenis_kelamin') == 'perempuan') ? 'checked' : ''}}" class="radio" > Perempuan
+                            </div>
+                            @error('jenis_kelamin')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
 
                             <div class="col-md-6">

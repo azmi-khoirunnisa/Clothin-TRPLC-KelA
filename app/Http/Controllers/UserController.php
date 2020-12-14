@@ -25,9 +25,9 @@ class UserController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-  /*  public function create()
+    public function create()
     {
-        return view ('form');
+        return view ('admin.create_admin');
     }
 
     /**
@@ -36,9 +36,21 @@ class UserController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    /*public function store(Request $request)
+      public function store(Request $request)
     {
-        /*User::create([
+    /*  $request->validate([
+      'nama' => 'required|alpha|min:4|max:255',
+      'tempat_lahir' => 'required|alpha|max:255',
+      'tanggal_lahir' => 'required|date_format:d/m/Y',
+      'email' => 'required|email|unique:users',
+      'jenis_kelamin' => 'required',
+      'noHp' => 'required|numeric',
+      'password' => 'required|min:8|max:25',
+      'confirm_password' => 'required|min:8|max:25|same:password',
+      'role' => 'required',
+
+
+          User::create([
           'nama'=>e($request->input('nama')),
           'tempat_lahir'=>e($request->input('tempat_lahir')),
           'tanggal_lahir'=>e($request->input('tanggal_lahir')),
@@ -48,24 +60,13 @@ class UserController extends Controller
           'password'=> bcrypt($request->input('password')),
           'role'=> e($request->input('role')),
 
-        ]);*/
-
-      /*  $validatedData = $request->validate([
-          'nama' => 'required|alpha|min:4|max:255',
-          'tempat_lahir' => 'required|alpha|max:255',
-          'tanggal_lahir' => 'required|date_format:d/m/Y',
-          'email' => 'required|email|unique:users',
-          'jenis_kelamin' => 'required',
-          'noHp' => 'required|numeric',
-          'password' => 'required|min:8|max:25',
-          'confirm_password' => 'required|min:8|max:25|same:password',
-          'role' => 'required',
-
         ]);
-        $users = User::create($validatedData);
 
-        return redirect('/users');
-    } */
+
+
+      ]);*/
+
+    }
 
     /**
      * Display the specified resource.

@@ -24,16 +24,13 @@
              </a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="" >Produk</a>
+             <a class="nav-link" href="{{ route('customer.toko.index')}}" >List Toko</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-               target="_blank">Free
-               download</a>
+             <a class="nav-link" href="">Menu 3</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-               tutorials</a>
+             <a class="nav-link" href="">Menu 4</a>
            </li>
          </ul>
 
