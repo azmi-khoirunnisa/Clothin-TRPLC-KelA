@@ -12,9 +12,9 @@
 </div>
 <div class="container">
 
-      <div class="card" style="width: 70rem;" align="center">
+      <div class="card" style="width: 70rem;height: 25rem;background-color:#99d6ff;" align="center">
           <div class="card-body">
-            <h1 class="card-text">{{$data->nama_toko}}</h1>
+            <h1 class="card-text" style="font-family:Helvetica;font-weight:20px;">{{$data->nama_toko}}</h1>
             <b class="card-text"> {{$data->deskripsi_toko}}</b>
           </div>
           <div align="right">
