@@ -26,7 +26,7 @@
                     <td>{{ $row->nama_toko}}</td>
                     <td>{{ $row->deskripsi_toko}}</td>
                     <td>
-                      <a href="{{ route('customer.toko.show',$row->id)}}" class="btn btn-primary">Show</a>
+                      <a href="{{ route('customer.toko.show',$row->id)}}" class="btn btn-outline-secondary btn-sm" >Show</a>
                     </td>
                   </tr>
                   @endforeach

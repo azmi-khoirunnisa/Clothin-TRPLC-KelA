@@ -51,10 +51,13 @@ class tokoController extends Controller
      */
     public function show($id)
     {
-      //$data= produk::find($id);
-      //dd($produk);
-      return view('customer.toko-detail');
+      $data= toko::findOrFail($id);
+      $produk = produk::where('toko_id',$id)->get();
+      $id_ = $id;
+      //dd($data,$produk);
+      return view('customer.toko-detail', compact('data','produk'));
     }
+
 
     /**
      * Show the form for editing the specified resource.
@@ -89,4 +92,5 @@ class tokoController extends Controller
     {
         //
     }
+
 }

@@ -4,23 +4,25 @@
 <br>
 <br>
   @foreach ($toko as $data)
-<div align="left">
+
+<div class="container">
+<div class="card bg-white text-white">
+  <img src="{{URL::asset('/image/toko-Page-1.png')}}" class="card-img"/>
+  <div class="card-img-overlay">
+    <h1 class="card-title" style="color:black;text-align:right;font-family:Lucida Sans;">{{$data->nama_toko}}</h1>
+    <p class="card-text" style="color:black;text-align:right;">
+    {{$data->deskripsi_toko}}
+    </p>
+    <div align="right" style="margin-top:10rem;">
+      <a href="{{ route('seller.deskripsi_toko.edit', $data->id)}}" class="btn btn-outline-light">Ubah Deskripsi Toko</a>
+    </div>
+  </div>
+</div>
+@endforeach
+</div>
+<div align="center">
   <a href="{{ route('seller.deskripsi_toko.create')}}" class="btn btn-primary">Deskripsi Toko</a>
   <a href="{{ route('seller.deskripsi_toko.show',$data->id)}}" class="btn btn-danger" align="right">Buat Katalog</a>
   <a href="{{ route('seller.katalog')}}" class="btn btn-warning">Katalog</a>
-</div>
-</div>
-<div class="container">
-
-      <div class="card" style="width: 70rem;height: 25rem;background-color:#99d6ff;" align="center">
-          <div class="card-body">
-            <h1 class="card-text" style="font-family:Helvetica;font-weight:20px;">{{$data->nama_toko}}</h1>
-            <b class="card-text"> {{$data->deskripsi_toko}}</b>
-          </div>
-          <div align="right">
-            <a href="{{ route('seller.deskripsi_toko.edit', $data->id)}}" class="btn btn-success">Ubah Deskripsi Toko</a>
-          </div>
-      </div>
-    @endforeach
 </div>
 @endsection
