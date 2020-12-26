@@ -18,20 +18,18 @@
 
          <!-- Left -->
          <ul class="navbar-nav mr-auto">
-           <li class="nav-item active">
+           <li class="nav-item">
              <a class="nav-link waves-effect" href="#">Home
-               <span class="sr-only">(current)</span>
              </a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="">Daftar Pengguna</a>
+             <a class="nav-link" href="">Daftar Pengguna</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="">Menu 4</a>
+             <a class="nav-link" href="{{route('admin.verifikasi')}}">Verifikasi</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-               tutorials</a>
+             <a class="nav-link waves-effect" href=""></a>
            </li>
          </ul>
 

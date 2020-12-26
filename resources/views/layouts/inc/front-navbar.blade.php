@@ -3,7 +3,7 @@
     <div class="container">
 
       <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
+      <a class="navbar-brand waves-effect" href="">
         <strong class="blue-text">CLOTH.IN</strong>
       </a>
 
@@ -18,9 +18,9 @@
 
         <!-- Left -->
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link waves-effect" href="#">Home
-              <span class="sr-only">(current)</span>
+            <!--  <span class="sr-only">(current)</span>!-->
             </a>
           </li>
           <li class="nav-item">

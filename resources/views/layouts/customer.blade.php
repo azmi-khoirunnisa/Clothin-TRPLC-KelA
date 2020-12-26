@@ -24,6 +24,7 @@
 
   <main>
     @yield('content')
+    @include('sweetalert::alert')
   </main>
 
   <!--@include('layouts.inc.front-footer')!-->

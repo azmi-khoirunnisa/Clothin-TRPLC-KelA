@@ -4,7 +4,9 @@ namespace App\Http\Controllers\seller;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Alert;
 use App\User;
+
 
 class dashboardController extends Controller
 {
@@ -20,6 +22,7 @@ class dashboardController extends Controller
 
     public function index()
     {
+        //Alert::error('Error Title', 'Error Message');
         return view('seller.dashboard');
     }
 

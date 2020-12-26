@@ -8,6 +8,10 @@
       <div class="card-img-overlay">
         <h1 class="card-title" style="color:blue;text-align:left;font-family:garamond;font-size:80px;">{{$data->nama_toko}}</h1>
           <p class="card-text" style="color:blue;text-align:left;font-family:garamond;font-size:40px;">{{$data->deskripsi_toko}}</p>
+          <button type="button" class="btn btn-primary btn-floating" style="margin-top:150px;">
+            <i class="fas fa-comment fa-lg"> Chat</i>
+          </button>
+          <a href="{{ route('customer.datapesanan.index', $data->id)}}" class="btn btn-secondary" style="margin-top:150px;margin-left:30px;">Pesan</a>
       </div>
   </div><br>
   <div class="row row-cols-1 row-cols-md-3 g-4" >

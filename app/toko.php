@@ -4,6 +4,7 @@ namespace App;
 use App\User;
 use App\produk;
 use App\toko;
+use App\data_pesanan;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -21,6 +22,10 @@ class toko extends Model
   public function produk()
   {
     return $this->hasMany('App\produk');
+  }
+  public function data_pesanan()
+  {
+    return $this->hasMany('App\data_pesanan');
   }
 
 

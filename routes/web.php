@@ -1,5 +1,9 @@
 <?php
 
+use RealRashid\SweetAlert\Facades\Alert;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,6 +16,9 @@
 */
 
 Route::get('/', function () {
+    //Alert::success('Success Title', 'Success Message');
+    //Alert::question('Question Title', 'Question Message');
+    //Alert::warning('Peringatan', 'Email dan Password Tidak Valid');
     return view('frontend.index');
 });
 
@@ -31,12 +38,14 @@ Route::prefix('admin')->group(function(){
     return view('admin.dashboard');
   })->name('admin.dashboard');
   Route::get('/users','UserController@create')->name('user.create');
+  Route::get('/verifikasi','admin\verifikasiController@index')->name('admin.verifikasi');
 });
 
 
 Route::group(['middleware'=>['auth']], function(){
   Route::prefix('seller')->group(function(){
     Route::get('/',function(){
+      //Alert::error('Error Title', 'Error Message');
       return view('seller.dashboard');
     })->name('seller.dashboard');
 
@@ -70,6 +79,16 @@ Route::group(['middleware'=>['auth']], function(){
     Route::post('/katalog_toko/update/{id}','seller\katalogController@update')->name('seller.katalog.update');
     Route::get('/katalog_toko/{id}','seller\katalogController@destroy')->name('seller.katalog.destroy');
 
+    Route::get('/pesanan','seller\pesananController@index')->name('seller.pesanan');
+    //Route::resource('/pesanan','seller\pesananController');
+    Route::get('/pesanan/{id}','seller\pesananController@show')->name('seller.terima_pesanan');
+    Route::post('/pesanan/terima_pesanan','seller\pesananController@store')->name('seller.terima_pesanan.store');
+    //Route::resource('/pesanan/verifikasi','seller\dataVerifController');
+    Route::get('/pesanan/verifikasi','seller\dataVerifController@index')->name('seller.verif.index');
+
+    Route::get('/pesanan/resi/{id}','seller\resiController@show')->name('seller.resi');
+    Route::post('/pesanan/resi','seller\resiController@store')->name('seller.resi.store');
+
 
   });
 });
@@ -84,10 +103,16 @@ Route::group(['middleware'=>['auth']], function(){
 Route::group(['middleware'=>['auth']], function(){
   Route::prefix('customer')->group(function(){
     Route::get('/', function(){
-      return view('customer.dashboard');
+    return view('customer.dashboard');
     })->name('customer.dashboard');
     Route::get('/toko','customer\tokoController@index')->name('customer.toko.index');
     Route::get('/toko/{id}','customer\tokoController@show')->name('customer.toko.show');
+    //Route::resource('/data_pesanan','customer\data_pesananController');
+    Route::get('/toko/{id}/data_pesanan','customer\tokoController@pesan')->name('customer.datapesanan.index');
+    Route::post('/data_pesanan','customer\data_pesananController@store')->name('customer.datapesanan.store');
+    Route::get('/pesanan','customer\data_pesananController@pesanan')->name('customer.pesanan');
+    Route::get('/pesanan/riwayat','customer\data_pesananController@riwayat')->name('customer.riwayat');
+    Route::get('/pesanan/review/{id}','customer\data_pesananController@review')->name('customer.review');
   });
 });
 

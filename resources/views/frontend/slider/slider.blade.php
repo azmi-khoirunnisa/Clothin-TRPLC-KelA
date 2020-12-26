@@ -1,43 +1,41 @@
-<!--Carousel Wrapper-->
-<div id="carousel-example-1z" class="carousel slide carousel-fade" data-ride="carousel">
-  <!--Indicators-->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-    <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-  </ol>
-  <!--/.Indicators-->
-  <!--Slides-->
-  <div class="carousel-inner" role="listbox">
-    <!--First slide-->
-    <div class="carousel-item active">
-      <img class="d-block w-100" src=""
-        alt="First slide">
-    </div>
-    <!--/First slide-->
-    <!--Second slide-->
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(129).jpg"
-        alt="Second slide">
-    </div>
-    <!--/Second slide-->
-    <!--Third slide-->
-    <div class="carousel-item">
-      <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Slides/img%20(70).jpg"
-        alt="Third slide">
-    </div>
-    <!--/Third slide-->
-  </div>
-  <!--/.Slides-->
-  <!--Controls-->
-  <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
-  <!--/.Controls-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.hero-image {
+  background-image: url("image/image_5.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  margin-top: 65px;
+}
+
+.hero-text {
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="hero-image">
+<!--  <div class="hero-text">
+    <h1 style="font-size:50px;color:black;">Welcome to Clothin</h1>
+    <h3>And I'm a Photographer</h3>
+  </div>!-->
 </div>
-<!--/.Carousel Wrapper-->
+</body>
+</html>

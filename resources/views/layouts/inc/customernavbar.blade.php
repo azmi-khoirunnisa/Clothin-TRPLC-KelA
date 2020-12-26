@@ -24,13 +24,13 @@
              </a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="{{ route('customer.toko.index')}}" >List Toko</a>
+             <a class="nav-link" href="{{ route('customer.toko.index')}}" >Toko</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="">Menu 3</a>
+             <a class="nav-link" href="{{ route('customer.pesanan')}}">Pesanan</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="">Menu 4</a>
+             <a class="nav-link" href="{{ route('customer.riwayat')}}">Riwayat</a>
            </li>
          </ul>
 

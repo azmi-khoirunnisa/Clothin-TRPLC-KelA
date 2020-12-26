@@ -7,6 +7,8 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\toko;
 use App\produk;
+use App\data_pesanan;
+use App\data_transaksi;
 
 class User extends Authenticatable
 {
@@ -54,11 +56,20 @@ class User extends Authenticatable
       return null !== $this->roles()->where('name', $role)->first();
     }
 
-    public function toko(){
+    public function toko()
+    {
       return $this->hasOne('App\Toko');
     }
     public function produk()
     {
       return $this->hasMany('App\produk');
+    }
+    public function data_pesanan()
+    {
+      return $this->hasMany('App\data_pesanan');
+    }
+    public function data_transaksiy()
+    {
+      return $this->hasMany('App\data_transaksi');
     }
 }

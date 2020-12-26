@@ -16,6 +16,10 @@ class tokoController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     public function index()
     {
         $toko = toko::all();
@@ -56,6 +60,12 @@ class tokoController extends Controller
       $id_ = $id;
       //dd($data,$produk);
       return view('customer.toko-detail', compact('data','produk'));
+    }
+
+    public function pesan($id)
+    {
+      $data = toko::findOrFail($id);
+      return view('customer.data_pesanan',compact('data'));
     }
 
 

@@ -29,6 +29,7 @@
   <!--Main layout-->
   <main class="pt-5 mx-lg-5">
     @yield('content')
+    @include('sweetalert::alert')
   </main>
 
   <!--@include('layouts.inc.adminfooter')!-->

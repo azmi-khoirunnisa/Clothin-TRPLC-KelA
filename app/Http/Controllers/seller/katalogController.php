@@ -8,6 +8,9 @@ use App\User;
 use App\toko;
 use App\produk;
 use Auth;
+use Alert;
+
+
 class katalogController extends Controller
 {
     /**
@@ -46,9 +49,9 @@ class katalogController extends Controller
     public function store(Request $request)
     {
       $request->validate([
-          'nama_produk'   =>  'required|alpha',
+          'nama_produk'   =>  'required|string',
           'harga_produk'  =>  'required|numeric',
-          'bahan'         =>  'required|alpha',
+          'bahan'         =>  'required|string',
           'image'         =>  'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048'
 
       ]);
@@ -69,10 +72,10 @@ class katalogController extends Controller
 
       );
 
-    //  $data = $request->all();
-    //  dd($data);
+      //$data = $request->all();
+      //dd($data);
       produk::create($form_data);
-      return redirect()->back();
+      return back()->with('success', 'Berhasil Menambahkan Data Katalog');
     }
 
     /**
@@ -84,7 +87,7 @@ class katalogController extends Controller
     public function show($id)
     {
       $toko = toko::find($id);
-     return view('seller.create-katalog', compact('toko'));
+      return view('seller.create-katalog', compact('toko'));
     }
 
     /**

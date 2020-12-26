@@ -19,7 +19,7 @@
          <!-- Left -->
          <ul class="navbar-nav mr-auto">
            <li class="nav-item">
-             <a class="nav-link" href="">Home
+             <a class="nav-link" href="{{ route('seller.dashboard')}}">Home
               <!-- <span class="sr-only">(current)</span>!-->
              </a>
            </li>
@@ -27,7 +27,7 @@
              <a class="nav-link" href="{{ route('seller.kelola_toko')}}" >Kelola Toko</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link" href="">Menu 2</a>
+             <a class="nav-link" href="{{ route('seller.pesanan')}}">Pesanan</a>
            </li>
            <li class="nav-item">
              <a class="nav-link" href="">Menu 3</a>

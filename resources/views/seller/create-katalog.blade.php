@@ -1,7 +1,10 @@
 @extends('layouts.seller')
 
 @section('content')
+
+
 <br>
+
 @if($errors->any())
 <div class="alert alert-danger">
   <ul>
@@ -86,5 +89,6 @@
             </div>
         </div>
     </div>
+@include('sweetalert::alert')
 </div>
 @endsection

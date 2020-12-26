@@ -6,4 +6,6 @@
 
 @section('content')
 
+@include('frontend.slider.slider')
+
 @endsection
